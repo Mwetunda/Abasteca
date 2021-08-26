@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbastacaAPI", "AbastacaAPI\AbastacaAPI.csproj", "{DE878149-9123-4E9A-A2BD-3B48083B23B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbastacaAPI", "AbastacaAPI\AbastacaAPI.csproj", "{DE878149-9123-4E9A-A2BD-3B48083B23B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbastecaDAL", "AbastecaDAL\AbastecaDAL.csproj", "{91DD9392-466C-449F-AB02-420B51F16221}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbastecaDAL", "AbastecaDAL\AbastecaDAL.csproj", "{91DD9392-466C-449F-AB02-420B51F16221}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbastecaDTO", "AbastecaDTO\AbastecaDTO.csproj", "{AA75A394-4DD5-46A2-A401-EB6F14C90CB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbastecaDTO", "AbastecaDTO\AbastecaDTO.csproj", "{AA75A394-4DD5-46A2-A401-EB6F14C90CB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbastecaBLL", "AbastecaBLL\AbastecaBLL.csproj", "{59989EF0-EC67-44E1-81E7-0FD7C49771B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbastecaBLL", "AbastecaBLL\AbastecaBLL.csproj", "{59989EF0-EC67-44E1-81E7-0FD7C49771B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbastecaTeste", "AbastecaTeste\AbastecaTeste.csproj", "{0033C372-8995-4EBD-9E9E-04E36AA2AF40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{59989EF0-EC67-44E1-81E7-0FD7C49771B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59989EF0-EC67-44E1-81E7-0FD7C49771B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59989EF0-EC67-44E1-81E7-0FD7C49771B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0033C372-8995-4EBD-9E9E-04E36AA2AF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0033C372-8995-4EBD-9E9E-04E36AA2AF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0033C372-8995-4EBD-9E9E-04E36AA2AF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0033C372-8995-4EBD-9E9E-04E36AA2AF40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
