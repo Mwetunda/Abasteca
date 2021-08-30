@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbastecaDTO", "AbastecaDTO\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbastecaBLL", "AbastecaBLL\AbastecaBLL.csproj", "{59989EF0-EC67-44E1-81E7-0FD7C49771B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbastecaTeste", "AbastecaTeste\AbastecaTeste.csproj", "{0033C372-8995-4EBD-9E9E-04E36AA2AF40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbastecaTeste", "AbastecaTeste\AbastecaTeste.csproj", "{0033C372-8995-4EBD-9E9E-04E36AA2AF40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -15,7 +15,7 @@ namespace AbastecaDAL.EFC
 
         }
         public DbSet<Bomba> Bombas { get; set; }
-        public DbSet<Usuario> usuarios { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Condutor> Condutors { get; set; }
         public DbSet<Gerente> Gerentes { get; set; }
         public DbSet<Supervisor> Supervisors { get; set; }

@@ -13,5 +13,7 @@ namespace AbastecaDAL.Entidades
         public int ProvinciaID { get; set; }
         [Required]
         public string Nome { get; set; }
+
+        public ICollection<Municipio> Municipios { get; set; }
     }
 }

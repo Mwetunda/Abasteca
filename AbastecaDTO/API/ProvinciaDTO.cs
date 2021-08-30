@@ -5,15 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbastecaDAL.Entidades
+namespace AbastecaDTO.API
 {
-    public class Operadora
+    public class ProvinciaDTO
     {
-        [Key]
-        public int OperadoraID { get; set; }
+        public int ProvinciaID { get; set; }
         [Required]
         public string Nome { get; set; }
 
-        public ICollection<Bomba> Bombas { get; set; }
+        public ICollection<MunicipioDTO> Municipios { get; set; }
     }
 }
