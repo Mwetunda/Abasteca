@@ -10,10 +10,10 @@ namespace AbastecaBLL.Interfaces
 {
     public interface IProvincia
     {
-        Response Insert(ProvinciaDTO dto);
-        Response List(int page, int take, string filtro = null);
+        Response Insert(ProvinciaCreatDTO dto);
+        Response List();
         Response GetByID(int id);
-        Response Update(ProvinciaDTO dto);
+        Response Update(ProvinciaUpdateDTO dto);
         Response Delete(int id);
     }
 }

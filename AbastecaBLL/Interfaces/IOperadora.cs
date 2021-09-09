@@ -10,10 +10,10 @@ namespace AbastecaBLL.Interfaces
 {
     public interface IOperadora
     {
-        Response Insert(OperadoraDTO dto);
-        Response List(int page, int take, string filtro = null);
+        Response Insert(OperadoraCreatDTO dto);
+        Response List();
         Response GetByID(int id);
-        Response Update(OperadoraDTO dto);
+        Response Update(OperadoraUpdateDTO dto);
         Response Delete(int id);
     }
 }

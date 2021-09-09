@@ -26,4 +26,13 @@ namespace AbastecaDTO.API
         [Required]
         public int ProvinciaID { get; set; }
     }
+    public class MunicipioUpdateDTOcriar
+    {
+        [Required]
+        public int MunicipioID { get; set; }
+        [Required]
+        public string Nome { get; set; }
+        [Required]
+        public int ProvinciaID { get; set; }
+    }
 }

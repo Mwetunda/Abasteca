@@ -62,7 +62,33 @@ namespace AbastecaBLL.Negocio
 
         public Response List(int page, int take, string filtro = null)
         {
-            throw new NotImplementedException();
+            var resposta = new Response();
+
+            try
+            {
+                var lista = context.Usuarios.AsNoTracking().AsQueryable();
+
+                var usuarios = lista.Select(x => new UsuarioDTO
+                {
+                    UsuarioID = x.UsuarioID,
+                    Nome = x.Nome,
+                    Telefone = x.Telefone,
+                    email = x.email,
+                    Estado = x.Estado,
+                    DataUltimoLogin = x.DataUltimoLogin,
+                    DataActualizacao = x.DataActualizacao,
+                    DataCadastro = x.DataCadastro,
+                    Perfil = x.Perfil
+
+                }).OrderBy(x => x.Nome).Paginar(page, take);
+
+                return resposta.Good(usuarios);
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, Recursos.MessagemErro.ME04);
+                return resposta.Bad(Recursos.MessagemErro.ME04);
+            }
         }
 
         public Response GetByID(Guid id)
@@ -87,7 +113,7 @@ namespace AbastecaBLL.Negocio
             }
         }
 
-        public Response Update(UsuarioDTO dto)
+        public Response Update(UsuarioUpdateDTO dto)
         {
             var res = new Response();
 

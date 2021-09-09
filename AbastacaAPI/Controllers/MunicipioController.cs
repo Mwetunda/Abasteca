@@ -13,74 +13,23 @@ namespace AbastacaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class MunicipioController : ControllerBase
     {
-        private readonly IUsuario usuario;
-        private ILogger<UsuarioController> logger;
+        private readonly IMunicipio municipio;
+        private ILogger<MunicipioController> logger;
 
-        public UsuarioController(IUsuario _usuario, ILogger<UsuarioController> _logger)
+        public MunicipioController(IMunicipio _municipio, ILogger<MunicipioController> _logger)
         {
-            usuario = _usuario;
+            municipio = _municipio;
             logger = _logger;
         }
 
         [HttpPost]
         [AllowAnonymous]
         [Route("Insert")]
-        public IActionResult Insert(UsuarioDTOcriar dto)
+        public IActionResult Insert(MunicipioDTOcriar dto)
         {
-            var res = usuario.Insert(dto);
-
-            try
-            {
-                if (res != null)
-                {
-                    return Ok(res);
-                }
-                else
-                {
-                    return BadRequest(res.Mensagem);
-                }
-            }
-            catch(Exception e)
-            {
-                logger.LogError(e, e.Message);
-                return BadRequest("Erro ao cadastrar usuário");
-            }
-        }
-
-        [HttpGet]
-        [Route("Listar")]
-        public IActionResult Listar(int? page, int? take, string filtro)
-        {
-            var pagina = page ?? 1;
-            var quantidade = take ?? 10;
-
-            try
-            {
-                var resposta = usuario.List(pagina, quantidade, filtro);
-
-                if (resposta.Exito)
-                {
-                    return Ok(resposta);
-                }
-                else
-                {
-                    return BadRequest("Erro ao gerar lista de usuários");
-                }
-            }
-            catch(Exception e)
-            {
-                logger.LogError(e, e.Message);
-                return BadRequest("Erro ao gerar lista de usuários");
-            }
-        }
-
-        [HttpPut]
-        [Route("Update")]
-        public IActionResult Update(UsuarioUpdateDTO dto)
-        {
-            var res = usuario.Update(dto);
+            var res = municipio.Insert(dto);
 
             try
             {
@@ -96,7 +45,56 @@ namespace AbastacaAPI.Controllers
             catch (Exception e)
             {
                 logger.LogError(e, e.Message);
-                return BadRequest("Erro ao actualizar dados do usuário");
+                return BadRequest("Erro ao cadastrar Município");
+            }
+        }
+
+        [HttpGet]
+        [Route("Listar")]
+        public IActionResult Listar(int provinciaId)
+        {
+
+            try
+            {
+                var resposta = municipio.List(provinciaId);
+
+                if (resposta.Exito)
+                {
+                    return Ok(resposta);
+                }
+                else
+                {
+                    return BadRequest("Erro ao gerar lista de municípios");
+                }
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, e.Message);
+                return BadRequest("Erro ao gerar lista de municípios");
+            }
+        }
+
+        [HttpPut]
+        [Route("Update")]
+        public IActionResult Update(MunicipioUpdateDTOcriar dto)
+        {
+            var res = municipio.Update(dto);
+
+            try
+            {
+                if (res != null)
+                {
+                    return Ok(res);
+                }
+                else
+                {
+                    return BadRequest(res.Mensagem);
+                }
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, e.Message);
+                return BadRequest("Erro ao atualizar dados da operadora");
             }
         }
     }

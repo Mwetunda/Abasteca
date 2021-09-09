@@ -10,29 +10,17 @@ namespace AbastecaDTO.API
     public class BombasDTO
     {
         public Guid BombaID { get; set; }
-        [Required]
-        public int OperadoraID { get; set; }
-        [Required]
-        public int MunicipioID { get; set; }
-        [Required]
         public string Localidade { get; set; }
-        [Required]
         public string Longitude { get; set; }
-        [Required]
         public string Latitude { get; set; }
-        [Required]
         public int Sinal { get; set; }
-        public DateTime DataCadastro { get; set; }
-        public DateTime DataActualizacao { get; set; }
 
         public MunicipioDTO Municipio { get; set; }
         public OperadoraDTO Operadora { get; set; }
         public ICollection<SupervisorDTO> Supervisors { get; set; }
     }
-    public class BombasDTOcriar
+    public class BombascriarDTO
     {
-        public Guid BombaID { get; set; }
-        [Required]
         public int OperadoraID { get; set; }
         [Required]
         public int MunicipioID { get; set; }
@@ -42,7 +30,20 @@ namespace AbastecaDTO.API
         public string Longitude { get; set; }
         [Required]
         public string Latitude { get; set; }
+    }
+    public class BombasUpdateDTO
+    {
         [Required]
-        public int Sinal { get; set; }
+
+        public Guid BombaID { get; set; }
+        public int OperadoraID { get; set; }
+        [Required]
+        public int MunicipioID { get; set; }
+        [Required]
+        public string Localidade { get; set; }
+        [Required]
+        public string Longitude { get; set; }
+        [Required]
+        public string Latitude { get; set; }
     }
 }

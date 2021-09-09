@@ -15,4 +15,15 @@ namespace AbastecaDTO.API
 
         public ICollection<MunicipioDTO> Municipios { get; set; }
     }
+    public class ProvinciaCreatDTO
+    {
+        [Required]
+        public string Nome { get; set; }
+    }
+    public class ProvinciaUpdateDTO
+    {
+        public int ProvinciaID { get; set; }
+        [Required]
+        public string Nome { get; set; }
+    }
 }

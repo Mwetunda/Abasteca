@@ -13,74 +13,23 @@ namespace AbastacaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class OperadoraController : ControllerBase
     {
-        private readonly IUsuario usuario;
-        private ILogger<UsuarioController> logger;
+        private readonly IOperadora operadora;
+        private ILogger<OperadoraController> logger;
 
-        public UsuarioController(IUsuario _usuario, ILogger<UsuarioController> _logger)
+        public OperadoraController(IOperadora _operadora, ILogger<OperadoraController> _logger)
         {
-            usuario = _usuario;
+            operadora = _operadora;
             logger = _logger;
         }
 
         [HttpPost]
         [AllowAnonymous]
         [Route("Insert")]
-        public IActionResult Insert(UsuarioDTOcriar dto)
+        public IActionResult Insert(OperadoraCreatDTO dto)
         {
-            var res = usuario.Insert(dto);
-
-            try
-            {
-                if (res != null)
-                {
-                    return Ok(res);
-                }
-                else
-                {
-                    return BadRequest(res.Mensagem);
-                }
-            }
-            catch(Exception e)
-            {
-                logger.LogError(e, e.Message);
-                return BadRequest("Erro ao cadastrar usuário");
-            }
-        }
-
-        [HttpGet]
-        [Route("Listar")]
-        public IActionResult Listar(int? page, int? take, string filtro)
-        {
-            var pagina = page ?? 1;
-            var quantidade = take ?? 10;
-
-            try
-            {
-                var resposta = usuario.List(pagina, quantidade, filtro);
-
-                if (resposta.Exito)
-                {
-                    return Ok(resposta);
-                }
-                else
-                {
-                    return BadRequest("Erro ao gerar lista de usuários");
-                }
-            }
-            catch(Exception e)
-            {
-                logger.LogError(e, e.Message);
-                return BadRequest("Erro ao gerar lista de usuários");
-            }
-        }
-
-        [HttpPut]
-        [Route("Update")]
-        public IActionResult Update(UsuarioUpdateDTO dto)
-        {
-            var res = usuario.Update(dto);
+            var res = operadora.Insert(dto);
 
             try
             {
@@ -96,7 +45,56 @@ namespace AbastacaAPI.Controllers
             catch (Exception e)
             {
                 logger.LogError(e, e.Message);
-                return BadRequest("Erro ao actualizar dados do usuário");
+                return BadRequest("Erro ao cadastrar Operadora");
+            }
+        }
+
+        [HttpGet]
+        [Route("Listar")]
+        public IActionResult Listar()
+        {
+
+            try
+            {
+                var resposta = operadora.List();
+
+                if (resposta.Exito)
+                {
+                    return Ok(resposta);
+                }
+                else
+                {
+                    return BadRequest("Erro ao gerar lista de operadoras");
+                }
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, e.Message);
+                return BadRequest("Erro ao gerar lista de operadoras");
+            }
+        }
+
+        [HttpPut]
+        [Route("Update")]
+        public IActionResult Update(OperadoraUpdateDTO dto)
+        {
+            var res = operadora.Update(dto);
+
+            try
+            {
+                if (res != null)
+                {
+                    return Ok(res);
+                }
+                else
+                {
+                    return BadRequest(res.Mensagem);
+                }
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, e.Message);
+                return BadRequest("Erro ao atualizar dados da operadora");
             }
         }
     }

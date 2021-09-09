@@ -43,6 +43,17 @@ namespace AbastecaDTO.API
         public int Perfil { get; set; }
 
     }
+    public class UsuarioUpdateDTO
+    {
+        public Guid UsuarioID { get; set; }
+        [Required]
+        public string Nome { get; set; }
+        [Required]
+        public string Telefone { get; set; }
+        [Required]
+        public string email { get; set; }
+    
+    }
     public class UsuarioDTOlogin
     {
         public string Telefone { get; set; }

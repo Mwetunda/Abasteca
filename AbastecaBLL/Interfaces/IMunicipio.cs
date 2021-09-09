@@ -10,10 +10,10 @@ namespace AbastecaBLL.Interfaces
 {
     public interface IMunicipio
     {
-        Response Insert(MunicipioDTO dto);
-        Response List(int page, int take, string filtro = null);
+        Response Insert(MunicipioDTOcriar dto);
+        Response List(int provinciaId);
         Response GetByID(int id);
-        Response Update(MunicipioDTO dto);
+        Response Update(MunicipioUpdateDTOcriar dto);
         Response Delete(int id);
     }
 }

@@ -38,7 +38,7 @@ namespace AbastacaAPI
 
             services.AddControllers();
 
-            services.AddDbContext<AbastecaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("conn")));
+            services.AddDbContext<AbastecaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("conn1")));
 
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
 
@@ -79,7 +79,15 @@ namespace AbastacaAPI
             services.AddCors();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IOperadora, OperadoraBLL>();
+            services.AddScoped<IProvincia, ProvinciaBLL>();
+            services.AddScoped<IMunicipio, MunicipioBLL>();
             services.AddScoped<IUsuario, UsuarioBLL>();
+            services.AddScoped<ISupervisor, SupervisorBLL>();
+            services.AddScoped<IGerente, GerenteBLL>();
+            services.AddScoped<ICondutor, CondutorBLL>();
+            services.AddScoped<IBombas, BombasBLL>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

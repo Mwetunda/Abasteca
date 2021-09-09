@@ -15,4 +15,15 @@ namespace AbastecaDTO.API
 
         public ICollection<BombasDTO> Bombas { get; set; }
     }
+    public class OperadoraCreatDTO
+    {
+        [Required]
+        public string Nome { get; set; }
+    }
+    public class OperadoraUpdateDTO
+    {
+        public int OperadoraID { get; set; }
+        [Required]
+        public string Nome { get; set; }
+    }
 }
